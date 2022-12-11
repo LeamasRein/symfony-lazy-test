@@ -13,12 +13,12 @@ class TestLazyAuthenticator extends AbstractAuthenticator
 {
     public function supports(Request $request): ?bool
     {
-        throw new Exception("Lazy not working");
-        return false;
+        return null;
     }
 
     public function authenticate(Request $request): Passport
     {
+        throw new Exception("Lazy not working");
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
